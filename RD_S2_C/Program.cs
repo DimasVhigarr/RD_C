@@ -38,6 +38,18 @@ namespace RD_S2_C
 
         
 
-       
+        public void insert(string Nama_pelanggan, string Alamat, string Nomor_telepon, SqlConnection con)
+        {
+            string str = "";
+            str = "insert into pelanggan (Nama_pelanggan, Alamat, Nomor_telepon)" + "values(@Nama_pelanggan, @alamat, @Nomor_Telepon)";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("Nama_pelanggan", Nama_pelanggan));
+            cmd.Parameters.Add(new SqlParameter("Alamat", Alamat));
+            cmd.Parameters.Add(new SqlParameter("Nomor_telepon", Nomor_telepon));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil Ditambahkan");
+        }
     }
 }
