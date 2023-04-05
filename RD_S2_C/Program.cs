@@ -132,7 +132,11 @@ namespace RD_S2_C
 
         public void Delete(string Nama_pelanggan, string Alamat, string Nomor_telepon, SqlConnection con)
         {
-
+            string str = "";
+            str = "Delete From pelanggan where Nama_Pelanggan" + " = '" + Nama_pelanggan + "'";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Have been Deleted");
         }
     }
 }
