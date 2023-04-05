@@ -29,7 +29,23 @@ namespace RD_S2_C
                     char chr = Convert.ToChar(Console.ReadLine());
                     switch (chr)
                     {
-                        
+                        case 'K':
+                            {
+                                SqlConnection conn = null;
+                                string strKoneksi = "Data Source = LAPTOP-1VTGMJT8\\DIMPSY" +
+                                    "initial catalog = {0}; " +
+                                    "User ID = {1}; password = {2}";
+                                conn = new SqlConnection(string.Format(strKoneksi, db, user, pass));
+                                conn.Open();
+                                Console.Clear();
+                                while (true)
+                                {
+                                    try
+                                    {
+
+                                    }
+                                }
+                            }
                     }
                 }
                 
