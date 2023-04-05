@@ -42,7 +42,18 @@ namespace RD_S2_C
                                 {
                                     try
                                     {
+                                        Console.WriteLine("\nMenu");
+                                        Console.WriteLine("1. Melihat seluruh data");
+                                        Console.WriteLine("2. Tambah data");
+                                        Console.WriteLine("4. Update Data");
+                                        Console.WriteLine("5. Hapus Data");
+                                        Console.WriteLine("3. Keluar");
+                                        Console.WriteLine("\nEnter your choice (1-3): ");
+                                        char ch = Convert.ToChar(Console.ReadLine());
+                                        switch (ch)
+                                        {
 
+                                        }
                                     }
                                 }
                             }
