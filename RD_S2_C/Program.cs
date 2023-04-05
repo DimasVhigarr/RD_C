@@ -45,9 +45,9 @@ namespace RD_S2_C
                                         Console.WriteLine("\nMenu");
                                         Console.WriteLine("1. Melihat seluruh data");
                                         Console.WriteLine("2. Tambah data");
-                                        Console.WriteLine("4. Update Data");
-                                        Console.WriteLine("5. Hapus Data");
-                                        Console.WriteLine("3. Keluar");
+                                        Console.WriteLine("3. Update Data");
+                                        Console.WriteLine("4. Hapus Data");
+                                        Console.WriteLine("5. Keluar");
                                         Console.WriteLine("\nEnter your choice (1-3): ");
                                         char ch = Convert.ToChar(Console.ReadLine());
                                         switch (ch)
@@ -72,7 +72,7 @@ namespace RD_S2_C
                                                     string Nomor_telepon = Console.ReadLine();
                                                     try
                                                     {
-                                                        pr.insert(Nama_pelanggan, Alamat, Nomor_telepon conn);
+                                                        pr.insert(Nama_pelanggan, Alamat, Nomor_telepon, conn);
 
                                                     }
                                                     catch
@@ -82,6 +82,14 @@ namespace RD_S2_C
                                                 }
                                                 break;
                                             case '3':
+                                                {
+
+                                                }
+                                                break;
+                                            case '4':
+                                                {
+
+                                                }
                                         }
                                     }
                                 }
@@ -94,6 +102,20 @@ namespace RD_S2_C
 
         
 
+
+        public void baca(SqlConnection con)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From pelanggan", con);
+            SqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                for (int i = 0; i < r.FieldCount; i++)
+                {
+                    Console.WriteLine(r.GetValue(i));
+                }
+                Console.WriteLine();
+            }
+        }
         public void insert(string Nama_pelanggan, string Alamat, string Nomor_telepon, SqlConnection con)
         {
             string str = "";
@@ -106,6 +128,11 @@ namespace RD_S2_C
             cmd.Parameters.Add(new SqlParameter("Nomor_telepon", Nomor_telepon));
             cmd.ExecuteNonQuery();
             Console.WriteLine("Data Berhasil Ditambahkan");
+        }
+
+        public void Delete(string Nama_pelanggan, string Alamat, string Nomor_telepon, SqlConnection con)
+        {
+
         }
     }
 }
