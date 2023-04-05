@@ -55,11 +55,33 @@ namespace RD_S2_C
                                             case '1':
                                                 {
                                                     Console.Clear();
-                                                    Console.WriteLine("DATA MAHASISWA\n");
+                                                    Console.WriteLine("DATA Pelanggan\n");
                                                     Console.WriteLine();
                                                     pr.baca(conn);
                                                 }
                                                 break;
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("INPUT DATA Pelanggan\n");
+                                                    Console.WriteLine("Nama_pelanggan :");
+                                                    string Nama_pelanggan = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Alamat Pelanggan :");
+                                                    string Alamat = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan No Telepon :");
+                                                    string Nomor_telepon = Console.ReadLine();
+                                                    try
+                                                    {
+                                                        pr.insert(Nama_pelanggan, Alamat, Nomor_telepon conn);
+
+                                                    }
+                                                    catch
+                                                    {
+                                                        Console.WriteLine("\nAnda ridak memiliki " + "akses untuk menambah data");
+                                                    }
+                                                }
+                                                break;
+                                            case '3':
                                         }
                                     }
                                 }
