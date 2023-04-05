@@ -52,7 +52,14 @@ namespace RD_S2_C
                                         char ch = Convert.ToChar(Console.ReadLine());
                                         switch (ch)
                                         {
-
+                                            case '1':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("DATA MAHASISWA\n");
+                                                    Console.WriteLine();
+                                                    pr.baca(conn);
+                                                }
+                                                break;
                                         }
                                     }
                                 }
